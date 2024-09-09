@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <div class="ShowData p-4">
+      <!-- Header and Search -->
+      <div class="infoShow d-flex justify-content-between align-items-center">
+        <h3>الرسائل</h3>
+        <div class="SearchUser d-flex justify-content-between align-items-center text-center">
+          <input 
+            type="text" 
+            class="inputSearch" 
+            placeholder="ادخل اسم الشخص" 
+            [(ngModel)]="searchQuery"
+            (keyup)="searchDepart(searchQuery)" 
+          />
+          <button class="btn btnsearch" (click)="searchDepart(searchQuery)">بحث</button>
+        </div>
+      </div>
+  
+      <!-- Loading Spinner -->
+      <div *ngIf="loading" class="text-center">
+        <div class="loading-spinner"></div>
+      </div>
+  
+      <!-- No Departments Found Message -->
+      <div *ngIf=" paginatedMessage.length === 0  || noResults" class="text-center">
+        <p>لا يوجد رسائل حاليا</p>
+      </div>
+  
+
+  
+ 
+      <!-- Departments Table (Hidden if there are no Departments) -->
+      <div class="Data my-5" *ngIf=" !noResults  && paginatedMessage.length > 0 ">
+        <table class="table w-100">
+          <thead>
+            <tr>
+              <th>الرقم</th>
+              <th>الاسم </th>
+              <th>البريد الالكتروني</th>
+              <th>رقم الهاتف</th>
+              <th>وقت الرسالة</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let message of paginatedMessage; let i = index">
+              <td class="px-3 font-bolder">{{ i + 1 }}</td>
+              <td>{{ message.nameUser }}</td>
+              <td>{{ message.Email}}</td>
+              <td>{{ message.phone}}</td>
+              <td>{{ message.createdAt |  date: 'yyyy-MM-dd' }}</td>
+              <td>
+                <button class="btn  btnDelete " >حذف <i class="bi bi-trash3 me-1"></i>
+                </button>
+                <button class="btn btnEdit" >تعديل <i class="bi bi-pencil-square"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Pagination Controls (Hidden if there are no Departments) -->
+      <div *ngIf="!loading && paginatedMessage.length > 0" class="allopreationPaga">
+        <div class="pagination-controls">
+          <button
+            class="BtnPagination"
+            (click)="goToPreviousPage()"
+            [disabled]="currentPage === 1"
+          >
+            السابق
+          </button>
+          <div class="page-info">
+            <span class="current-page NumpageActive">{{ currentPage }}</span>
+            <span
+              class="current-page NumpageActive NumpageNotActive"
+              *ngIf="currentPage < numberOfPages()"
+              (click)="goToPage(currentPage + 1)"
+            >
+              {{ currentPage + 1 }}
+            </span>
+            <span
+              class="current-page NumpageActive NumpageNotActive"
+              *ngIf="currentPage < numberOfPages() - 1"
+              (click)="goToPage(currentPage + 2)"
+            >
+              {{ currentPage + 2 }}
+            </span>
+          </div>
+          <button
+            class="BtnPagination"
+            (click)="goToNextPage()"
+            [disabled]="currentPage === numberOfPages()"
+          >
+            التالي
+          </button>
+        </div>
+  
+        <!-- Page Size Selection -->
+        <div class="limit-selection">
+          <label for="limit">العناصر في الصفحة:</label>
+          <select id="limit" (change)="onLimitChange($event)">
+            <option *ngFor="let limit of limits" [value]="limit" [selected]="limit === pageSize">
+              {{ limit }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  

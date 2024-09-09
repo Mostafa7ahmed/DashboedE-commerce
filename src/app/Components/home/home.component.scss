@@ -1,0 +1,31 @@
+.searchInput{
+    padding: 8px 20px ;
+    width: 500px;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 10px;
+}
+.searchInput input{
+    border: none;
+    background-color: transparent;
+    padding: 5px 20px ;
+
+    outline: none;
+    width: 90%;
+
+}
+.searchInput input::placeholder{
+    color: #B1B1B1;
+}
+.infoPerson{
+    font-size: 18px;
+    color: #B88E2F;
+}
+.bgHome{
+    background-color: #FAFAFA;
+}
+
+.dash{
+    height: fit-content;
+
+}

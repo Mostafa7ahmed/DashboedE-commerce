@@ -1,0 +1,67 @@
+<section class="Regiter">
+
+    <div class="layOut"></div>
+
+    <div class=" regiterForm">
+
+        <h3>سجل دخول الان</h3>
+        <p>ادخل بياناتك لتتمتع بنجربة تسوق مميزة</p>
+        <form (ngSubmit)="Sigin(siginForm)" [formGroup]="siginForm">
+            <div class="form-group mt-3">
+                <label for="email" class="mb-3"> البريد الالكتروني</label>
+                <input type="email" class="form-control inps " id="email" formControlName="email"
+                    placeholder=" ادخل البريد الالكتروني ">
+                <div *ngIf="siginForm.get('email')?.errors && siginForm.get('email')?.touched" class="text-danger mt-1">
+                    <span *ngIf="siginForm.get('email')?.errors?.['required']" class="m-0">الايميل مطلوب</span>
+                    <span *ngIf="siginForm.get('email')?.errors?.['email']" class="m-0">الايميل غير صالح</span>
+
+                </div>
+            </div>
+
+            <div class="form-group  mt-3 ">
+                <label for="password" class="mb-3"> كلمة المرور </label>
+                <div class="position-relative">
+                    <input [type]="passwordFieldType ? 'password' : 'text'" class="form-control inps "
+                        formControlName="password" id="password" placeholder=" ادخل كلمة المرور">
+
+
+                    <i (click)="togglePasswordVisibility()" role="button" class="bi position-absolute top-4 passicon"
+                        [class.bi-eye-slash-fill]="!passwordFieldType" [class.bi-eye-fill]="passwordFieldType"></i>
+                </div>
+                <div *ngIf="siginForm.get('password')?.errors && siginForm.get('password')?.touched"
+                    class="text-danger">
+                    <span *ngIf="siginForm.get('password')?.errors?.['required']" class="mb-0">كلمة المرور مطلوبة</span>
+                    <span *ngIf="siginForm.get('password')?.errors?.['pattern']" class="mb-0"> ( Ex Mostafa &#64;123
+                        )كلمة المرور ضعيفة</span>
+                </div>
+
+
+
+            </div>
+
+
+
+
+            <div class="formValied my-3 ">
+                <div class="check ">
+                    <input type="checkbox" class="checkbox" value="" id="defaultCheck1">
+                    <label for="defaultCheck1"> اوافق علي الشروط والاحكام </label>
+                </div>
+
+            </div>
+
+            <button class="btnRegster btns" [disabled]="!siginForm.valid || isloading" type="submit">
+                <span *ngIf="!isloading">تأكيد</span>
+                <span *ngIf="isloading" class="spinner-border spinner-border-sm" role="status"
+                    aria-hidden="true"></span>
+                <span *ngIf="isloading">جاري التحميل...</span>
+            </button>
+
+
+
+        </form>
+
+    </div>
+
+
+</section>

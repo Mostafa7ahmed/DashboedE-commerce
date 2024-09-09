@@ -1,0 +1,151 @@
+<div class="container-fluid">
+
+    <div class="CardWish ">
+
+    <div class="widsh">
+
+        <div class="infoWidsh">
+            <h5>الاجمالي </h5>
+            <span >{{random}} ر س </span>
+
+        </div>
+
+
+        <div class="iconWidsh">
+            <i class="bi bi-cash-stack"></i>
+
+        </div>
+    </div>
+
+
+    <div class="widsh">
+
+        <div class="infoWidsh">
+            <h5>المستخدمين </h5>
+            <span>{{totalUsers}}</span>
+
+        </div>
+
+
+        <div class="iconWidsh people">
+            <i class="bi bi-people-fill"></i>
+        </div>
+    </div>
+
+
+    <div class="widsh">
+
+        <div class="infoWidsh">
+            <h5>الطلبات </h5>
+            <span>{{orders}}</span>
+
+        </div>
+
+
+        <div class="iconWidsh orders">
+            <i class="bi bi-box mx-2 icon"></i>
+
+        </div>
+    </div>
+
+
+    <div class="widsh">
+
+        <div class="infoWidsh">
+            <h5>عدد المنتجات </h5>
+            <span>{{Product}}</span>
+
+        </div>
+
+
+        <div class="iconWidsh numberProduct">
+            <i class="bi bi-kanban-fill"></i>
+        </div>
+    </div>
+
+</div>
+
+
+    
+    <div class="ShowData p-4">
+
+        <div class="infoShow d-flex justify-content-between align-items-center">
+            <h3>العملاء</h3>
+            <div class="SearchUser d-flex justify-content-between align-items-center text-center">
+                <input type="text" class="inputSearch" placeholder="ادخل اسم العميل" [(ngModel)]="searchQuery"
+                    (keyup)="onKeyUp()" />
+                <button class="btn" (click)="onSearch()">بحث</button>
+            </div>
+        </div>
+
+        <div *ngIf="loading" class=" text-center">
+            <div class="loading-spinner"></div>
+        </div>
+        <div class="Data my-5">
+
+            <div *ngIf="users.length > 0">
+                <table class="table w-100">
+                    <thead>
+                        <tr>
+                            <th>الرقم</th>
+                            <th>اسم المستخدم</th>
+                            <th>البريد الالكتروني</th>
+                            <th>تاريخ انشاء الحساب</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; let i = index">
+                            <td class="px-3 font-bolder">{{ i + 1 }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.createdAt | date: 'yyyy-MM-dd' }}</td> 
+                            
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <!-- Pagination Controls -->
+                <div class="allopreationPaga mt-4">
+                    <div class="pagination-controls">
+                        <button class="BtnPagination" (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+                            السابق
+                        </button>
+                        <div class="page-info">
+                            <span class="current-page NumpageActive">{{ currentPage }}</span>
+                            <span class="current-page NumpageActive NumpageNotActive"
+                                *ngIf="currentPage < numberOfPages" (click)="goToPage(currentPage + 1)">
+                                {{ currentPage + 1 }}
+                            </span>
+                            <span class="current-page NumpageActive NumpageNotActive"
+                                *ngIf="currentPage < numberOfPages - 1" (click)="goToPage(currentPage + 2)">
+                                {{ currentPage + 2 }}
+                            </span>
+                        </div>
+                        <button class="BtnPagination" (click)="goToNextPage()"
+                            [disabled]="currentPage === numberOfPages">
+                            التالي
+                        </button>
+                    </div>
+
+                    <div class="limit-selection">
+                        <label for="limit">العناصر في الصفحة:</label>
+                        <select id="limit" (change)="onLimitChange($event)">
+                            <option value="10">10</option>
+                            <option *ngFor="let limit of limits" [value]="limit">{{ limit }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="users.length === 0" class="text-center">لا يوجد عملاء حاليا</div>
+
+
+
+
+        </div>
+ 
+
+
+    </div>
+</div>

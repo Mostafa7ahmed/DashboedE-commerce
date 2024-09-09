@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="ShowData p-4">
+        <h3 class="my-5">تعديل القسم</h3>
+
+        <div class="Data">
+            <form (ngSubmit)="updateProduct()" [formGroup]="editProduct">
+                <div class="row g-4 DataFrom">
+                    <div class="form-group col-md-6">
+                        <label for="name">اسم القسم</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="nameDepart" id="name"
+                            placeholder="ادخل اسم القسم"
+                            [ngClass]="{'is-invalid': editProduct.get('nameDepart')?.invalid && editProduct.get('nameDepart')?.touched}">
+                        <div *ngIf="editProduct.get('nameDepart')?.invalid && editProduct.get('nameDepart')?.touched" class="invalid-feedback">
+                            اسم القسم مطلوب ويجب أن يكون بين 3 و 40 حرفًا.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="image">اضافه صوره القسم</label>
+                        <input type="url" class="form-control mt-3 inputProduct" formControlName="image" id="image"
+                            placeholder="ادخل لينك صوره القسم"
+                            [ngClass]="{'is-invalid': editProduct.get('image')?.invalid && editProduct.get('image')?.touched}">
+                        <div *ngIf="editProduct.get('image')?.invalid && editProduct.get('image')?.touched" class="invalid-feedback">
+                            رابط الصورة مطلوب.
+                        </div>
+                    </div>
+
+       
+      
+        
+              
+
+                    <div class="mb-3 col-md-12">
+                        <label for="title" class="form-label">الوصف الطويل</label>
+                        <textarea class="form-control inputtitle" id="title" formControlName="title" rows="3"
+                            [ngClass]="{'is-invalid': editProduct.get('title')?.invalid && editProduct.get('title')?.touched}"></textarea>
+                        <div *ngIf="editProduct.get('title')?.invalid && editProduct.get('title')?.touched" class="invalid-feedback">
+                            الوصف الطويل مطلوب.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add">
+                    <button [disabled]="isloading || editProduct.invalid" class="btn btnEdit">
+                        <span *ngIf="!isloading">تحديث <i class="bi me-3 bi-pencil-square"></i></span>
+                        <span *ngIf="isloading">جارٍ تحديث المنتج... </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

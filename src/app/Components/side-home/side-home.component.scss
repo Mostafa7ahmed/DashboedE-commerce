@@ -1,0 +1,39 @@
+.Side{
+    background: #FFF;
+    height: 100vh;
+
+    
+}
+.text {
+    font-size: 21px;
+    font-family:"Tajawal";
+    font-weight: 500;
+    color:#979797 ;
+}
+.text.messgee{
+    font-size: 21px;
+}
+.icon{
+    color: #979797;
+    font-size: 20px;
+}
+.active .icon{
+    color: #B88E2F;
+}
+.active .text{
+    color: #B88E2F;
+
+}
+.logOut {
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+
+}
+.logOut .text{
+    color: red;
+}
+.logOut .icon{
+    color: red;
+}
+

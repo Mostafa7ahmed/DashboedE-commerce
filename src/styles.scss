@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: "Tajawal", system-ui;
+  font-weight: 400;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.custom-toast-zindex {
+  z-index: 122229999 !important;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.allopreationPaga {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  gap: 20px;
+}
+.pagination-controls .BtnPagination {
+  border: none;
+  background-color: #b88e2f;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.pagination-controls .BtnPagination:disabled {
+  background-color: #b88f2f6e;
+}
+.NumpageActive {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: #b88e2f;
+  color: #fceac0;
+  transition: 1s all ease-in-out;
+  cursor: pointer;
+}
+.NumpageActive:hover {
+  background-color: #cd9e31;
+}
+
+.NumpageNotActive {
+  background: #b88e2f61;
+  cursor: pointer;
+}
+.limit-selection {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #b88e2f;
+  color: #fff;
+}
+.limit-selection select {
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+  color: #fff;
+
+  outline: none;
+  background-color: #b88f2fa4;
+  border: 1px solid #fff;
+}
+
+/* dashboard.component.scss */
+
+.loading-spinner {
+  text-align: center;
+}
+
+.loading-spinner p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Optionally, you can use an animated spinner */
+.loading-spinner::before {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}

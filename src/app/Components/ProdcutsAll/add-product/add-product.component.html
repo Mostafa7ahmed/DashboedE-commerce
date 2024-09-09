@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <div class="ShowData p-4">
+        <h3 class=" my-5">اضافة منتج</h3>
+
+        <div class="Data">
+            <form (submit)="addProductSubmit(addProduct)" [formGroup]="addProduct">
+                <div class="row g-4 DataFrom">
+                    <div class="form-group col-md-6">
+                        <label for="name">اسم المنتج</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="nameProduact" id="name"
+                            placeholder="ادخل اسم المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('nameProduact')?.invalid && addProduct.get('nameProduact')?.touched}">
+                        <div *ngIf="addProduct.get('nameProduact')?.invalid && addProduct.get('nameProduact')?.touched" class="invalid-feedback">
+                            اسم المنتج مطلوب ويجب أن يكون بين 3 و 40 حرفًا.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="Image">اضافه صوره المنتج</label>
+                        <input type="url" class="form-control mt-3 inputProduct" formControlName="Image" id="Image"
+                            placeholder="ادخل لينك صوره المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('Image')?.invalid && addProduct.get('Image')?.touched}">
+                        <div *ngIf="addProduct.get('Image')?.invalid && addProduct.get('Image')?.touched" class="invalid-feedback">
+                            رابط الصورة مطلوب.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="price">السعر </label>
+                        <input type="number" class="form-control mt-3 inputProduct" formControlName="price" id="price"
+                            placeholder="ادخل السعر المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('price')?.invalid && addProduct.get('price')?.touched}">
+                        <div *ngIf="addProduct.get('price')?.invalid && addProduct.get('price')?.touched" class="invalid-feedback">
+                            السعر مطلوب.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="Qty">الكمية المتاحة</label>
+                        <input type="number" class="form-control mt-3 inputProduct" formControlName="Qty" id="Qty"
+                            placeholder="ادخل الكمية المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('Qty')?.invalid && addProduct.get('Qty')?.touched}">
+                        <div *ngIf="addProduct.get('Qty')?.invalid && addProduct.get('Qty')?.touched" class="invalid-feedback">
+                            الكمية مطلوبة.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="dec">الخصم</label>
+                        <input type="number" class="form-control mt-3 inputProduct" formControlName="dec" id="dec"
+                            placeholder="ادخل الخصم المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('dec')?.invalid && addProduct.get('dec')?.touched}">
+                        <div *ngIf="addProduct.get('dec')?.invalid && addProduct.get('dec')?.touched" class="invalid-feedback">
+                            الخصم مطلوب.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="depart">القسم</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="depart" id="depart"
+                            placeholder="ادخل القسم المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('depart')?.invalid && addProduct.get('depart')?.touched}">
+                        <div *ngIf="addProduct.get('depart')?.invalid && addProduct.get('depart')?.touched" class="invalid-feedback">
+                            القسم مطلوب.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="subTitle">الوصف القصير</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="subTitle" id="subTitle"
+                            placeholder="ادخل الوصف قصير المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('subTitle')?.invalid && addProduct.get('subTitle')?.touched}">
+                        <div *ngIf="addProduct.get('subTitle')?.invalid && addProduct.get('subTitle')?.touched" class="invalid-feedback">
+                            الوصف القصير مطلوب.
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="trans">مصاريف الشحن</label>
+                        <input type="number" class="form-control mt-3 inputProduct" formControlName="trans" id="trans"
+                            placeholder="ادخل مصاريف الشحن المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('trans')?.invalid && addProduct.get('trans')?.touched}">
+                        <div *ngIf="addProduct.get('trans')?.invalid && addProduct.get('trans')?.touched" class="invalid-feedback">
+                            مصاريف الشحن مطلوبة.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-12">
+                        <label for="Title" class="form-label">الوصف الطويل</label>
+                        <textarea class="form-control inputtitle" id="Title" formControlName="Title" rows="3"
+                            [ngClass]="{'is-invalid': addProduct.get('Title')?.invalid && addProduct.get('Title')?.touched}"></textarea>
+                        <div *ngIf="addProduct.get('Title')?.invalid && addProduct.get('Title')?.touched" class="invalid-feedback">
+                            الوصف الطويل مطلوب.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add">
+                    <button [disabled]="isloading || addProduct.invalid" class="btn btnEdit">
+                        <span *ngIf="!isloading"> اضافة <i class="bi me-3 bi-bag-plus-fill"></i></span>
+                        <span *ngIf="isloading"> جارٍ إضافة المنتج... </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

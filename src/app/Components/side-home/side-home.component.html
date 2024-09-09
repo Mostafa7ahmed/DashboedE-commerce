@@ -1,0 +1,82 @@
+<div class="container-fluid py-4 Side position-relative ">
+  <ul class="p-0 py-4 my-4 mx-1">
+    <li class="mb-4">
+      <a [routerLink]="['/dashbords/dashbord']" routerLinkActive="active" class="d-flex align-items-center">
+        <i class="bi bi-house-fill mx-2 icon"></i>
+        <span class="text">لوحة التحكم</span>
+      </a>
+    </li>
+    <li class="mb-4">
+      <a class="d-flex align-items-center" [routerLink]="['/dashbords/order']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-box mx-2 icon"></i>
+        <span class="text">الطلبات</span>
+      </a>
+    </li>
+
+    <li class="mb-4">
+      <a [routerLink]="['/dashbords/products']" (click)="toggleProdct()" routerLinkActive="active"
+        class="d-flex align-items-center">
+        <i class="bi bi-boxes mx-2 icon"></i>
+        <span class="text">المنتجات</span>
+      </a>
+
+
+      <div *ngIf="showProduct" class="ordersLink px-5 animate-transform">
+        <a [routerLink]="['/dashbords/products']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          class="text">
+          <span class="text">المنتجات</span>
+        </a>
+        <br>
+        <a [routerLink]="['/dashbords/AddProduct']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }" class="text">
+          <span class="text">اضافه</span>
+        </a>
+      </div>
+    </li>
+
+
+    <li class="mb-4">
+      <a [routerLink]="['/dashbords/depart']" (click)="toggleDepart()" routerLinkActive="active"
+        class="d-flex align-items-center">
+        <i class="bi bi-card-heading mx-2 icon"></i>
+        <span class="text">الاقسام</span>
+      </a>
+
+
+      <div *ngIf="showDepart" class="ordersLink px-5 animate-transform">
+        <a [routerLink]="['/dashbords/depart']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          class="text">
+          <span class="text">الاقسام</span>
+        </a>
+        <br>
+        <a [routerLink]="['/dashbords/addDepart']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          class="text">
+          <span class="text">اضافه</span>
+        </a>
+      </div>
+    </li>
+
+
+    <li class="mb-2">
+      <a class="d-flex align-items-center" [routerLink]="['/dashbords/message']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <i class="bi bi-chat-fill mx-2 icon"></i>
+        <span class="text messgee">رسائل المستخدمين</span>
+      </a>
+    </li>
+    <li class="mt-4">
+
+      <a class="d-flex  logOut  " (click)="callLogOut()">
+        <i class="bi bi-box-arrow-right  mx-2 icon"></i>
+        <span class="text messgee">تسجيل الخروج</span>
+      </a>
+    </li>
+ 
+  </ul>
+
+
+
+
+
+</div>

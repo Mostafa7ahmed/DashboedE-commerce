@@ -1,0 +1,42 @@
+
+<div class="container-fluid d-flex align-items-center justify-content-between px-5 py-3">
+
+    <div class="ImageLogo">
+        <img src="../../../assets/Image/logo.png" alt="" width="50px">
+    </div>
+
+    <div class="searchInput   position-relative">
+        <i class="bi bi-search"></i>
+
+        <input type="text" placeholder="بحث">
+
+    </div>
+ 
+
+
+    <div class="infoPerson  d-flex  align-items-center   ">
+        <i class="bi bi-bell-fill mx-3"></i>
+
+
+        <div class="person d-flex  align-items-center">
+            <i class="bi bi-caret-down-fill mx-2"></i>
+            <img src="../../../assets/Image/person.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="container-fluid p-0 bgHome">
+
+    <div class="row g-0">
+
+
+        <div class=" col-lg-2   col-md-2 col-sm-4 side ">
+            <app-side-home></app-side-home>
+        </div>
+
+       
+
+        <div class="col  p-3 m-4 dash ">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div> 

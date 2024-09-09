@@ -1,0 +1,123 @@
+.ShowData {
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  
+  .inputSearch {
+    padding: 6px 14px;
+    width: 200px;
+    background-color: transparent;
+    border: 0.5px solid #97979797;
+    outline: none;
+    border-radius: 10px;
+  
+  }
+  .btn {
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .btnsearch {
+    background-color: #b88e2f;
+
+    color: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .btnDelete {
+ 
+    background-color:transparent;
+    color: #ff1e00ad;
+    border:1px solid #ff1e00ad;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .btnDelete:hover {
+    background-color:#ff1e00ad;
+    color: #fff;
+    border:1px solid #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .btnDelete {
+ 
+    background-color:transparent;
+    color: #ff1e00ad;
+    border:1px solid #ff1e00ad;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .btnDelete:hover {
+    background-color:#ff1e00ad;
+    color: #fff;
+    border:1px solid #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+
+  .btnEdit {
+ 
+    background-color:transparent;
+    color: #319F43;
+    border:1px solid #319F43;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+  .btnEdit:hover {
+    background-color:#319F43;
+    color: #fff;
+    border:1px solid #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+  }
+
+  .Data {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .Data::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .Data::-webkit-scrollbar-thumb {
+    background-color: #b88f2fae; 
+    border-radius: 10px;
+  }
+  
+  .Data::-webkit-scrollbar-thumb:hover {
+    background-color: #b88e2f;
+  }
+  
+  .Data::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+  }
+  table {
+    width: 100% !important;
+  }
+  .table th, .table td {
+    text-align: center;
+    padding: 15px;
+    
+    border: none !important;
+  
+  }
+  .table{
+    width: 150% !important;
+  }
+  
+  .table th {
+    font-weight: bold;
+    background-color: #f8f9fa;
+     gap: 20px;
+     column-span: none;
+    margin-left: 10px;
+    border-radius: 10px;
+  }
+  .table  tr {
+    border-radius: 25px;
+     margin: 10px;
+  
+  
+  }
+  
