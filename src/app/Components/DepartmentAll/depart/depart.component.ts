@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DepartMent } from 'src/app/Core/InterFace/depart-ment';
 import { ConfirmService } from 'src/app/Core/Service/confirm.service';
 import { DepartService } from 'src/app/Core/Service/depart.service';
 import { ProductService } from 'src/app/Core/Service/product.service';
@@ -20,8 +21,8 @@ export class DepartComponent {
 
 
 
-  department: any[] = [];
-  paginatedDepartment: any[] = [];
+  department: DepartMent[] = [];
+  paginatedDepartment: DepartMent[] = [];
   pageSize = 10;
   currentPage = 1;
   length = 0;
@@ -122,7 +123,7 @@ export class DepartComponent {
 
 
 
-  onDelete(id: number) {
+  onDelete(id: string) {
     this._ConfirmService.confirmDeletion().then((isConfirmed) => {
       if (isConfirmed) {
         this._DepartService.deleteItem(id).subscribe(

@@ -29,7 +29,7 @@ const routes: Routes = [
       { path: 'AddProduct', component: AddProductComponent },
       { path: 'depart', component: DepartComponent },
       { path: 'addDepart', component: AdddepartComponent },
-      { path: 'products/edit/:id', component: EditProductComponent },
+      { path: 'products/edit/:id', component: EditProductComponent }, 
       { path: 'depart/edit/:id', component: EditdepartmentComponent },
 
       { path: 'message', component: MessageComponent },

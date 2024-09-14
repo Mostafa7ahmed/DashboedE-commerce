@@ -21,7 +21,7 @@ export class DepartService {
 
 
   
-  deleteItem(id: number) {
+  deleteItem(id: string) {
     const url = `${this.Url}/${id}`; 
     return this.HttpClient.delete(url);
   }

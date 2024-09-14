@@ -19,4 +19,8 @@ export class MessageService {
     return this._HttpClient.get(`${this.API_URL}?search=${search}`);
   }
 
+  deleteItem(id: string) {
+    const url = `${this.API_URL}/${id}`; 
+    return this._HttpClient.delete(url);
+  }
 }

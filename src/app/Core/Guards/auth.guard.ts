@@ -17,6 +17,7 @@ export class AuthGuard implements CanActivate {
     if (this._AuthService.userInfo.getValue() != null) {
 
       
+      
       return true;
     }
     
