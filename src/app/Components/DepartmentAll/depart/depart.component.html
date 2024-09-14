@@ -36,16 +36,20 @@
               <th>الرقم</th>
               <th>صوره القسم</th>
               <th>اسم القسم</th>
+              <th>عدد </th>
               <th>وصف</th>
+
               <th>الإجراءات</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let department of paginatedDepartment; let i = index">
               <td class="px-3 font-bolder">{{ i + 1 }}</td>
-              <td><img [src]="department.image" alt="" width="80px" /></td>
+              <td><img [src]="department.image" alt="" width="80px" class="rounded-2" /></td>
               <td>{{ department.nameDepart }}</td>
-              <td>{{ department.title | slice:0:50 }}</td>
+              <td>{{ department.numberofdepart }}</td>
+              <td>{{ department.title | slice:0:20 }} .....</td>
+
               <td>
                 <button class="btn  btnDelete " (click)="onDelete(department.id)">حذف <i class="bi bi-trash3 me-1"></i>
                 </button>

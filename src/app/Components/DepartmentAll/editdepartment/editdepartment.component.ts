@@ -34,7 +34,9 @@ export class EditdepartmentComponent implements OnInit {
           Validators.minLength(3),
           Validators.maxLength(40),
         ]),
+        numberofdepart: new FormControl(product.numberofdepart, [Validators.required]),
         image: new FormControl(product.image, [Validators.required]),
+
         title: new FormControl(product.title, [Validators.required]),
       });
     });

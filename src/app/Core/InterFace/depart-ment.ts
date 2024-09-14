@@ -4,6 +4,7 @@ export interface DepartMent {
     image: string;
     title: string;
     createdAt?: any;
+    numberofdepart: string;
 
 
 }

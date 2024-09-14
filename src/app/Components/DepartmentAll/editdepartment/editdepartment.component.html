@@ -25,6 +25,17 @@
                         </div>
                     </div>
 
+
+                    <div class="form-group col-md-6">
+                        <label for="numberofdepart">اضافه عدد الاقسام</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="numberofdepart" id="numberofdepart"
+                            placeholder="ادخل عدد  الاقسام"
+                            [ngClass]="{'is-invalid': editProduct.get('numberofdepart')?.invalid && editProduct.get('numberofdepart')?.touched}">
+                        <div *ngIf="editProduct.get('numberofdepart')?.invalid && editProduct.get('numberofdepart')?.touched" class="invalid-feedback">
+                            عدد الاقسام مطلوب.
+                        </div>
+                    </div>
+
        
       
         
