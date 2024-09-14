@@ -5,6 +5,7 @@ export interface DepartMent {
     title: string;
     createdAt?: any;
     numberofdepart: string;
+    RouteCategory:string;
 
 
 }

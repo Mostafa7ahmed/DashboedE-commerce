@@ -36,7 +36,15 @@
                         </div>
                     </div>
        
-      
+                    <div class="form-group col-md-6">
+                        <label for="RouteCategory">اضافه مسار الاقسام</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="RouteCategory" id="RouteCategory"
+                            placeholder="ادخل مسار  الاقسام"
+                            [ngClass]="{'is-invalid': addProduct.get('RouteCategory')?.invalid && addProduct.get('RouteCategory')?.touched}">
+                        <div *ngIf="addProduct.get('RouteCategory')?.invalid && addProduct.get('RouteCategory')?.touched" class="invalid-feedback">
+                            عدد مسار مطلوب.
+                        </div>
+                    </div>
         
               
 

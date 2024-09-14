@@ -30,6 +30,7 @@ export class AdddepartComponent {
     ]),
     image: new FormControl(null, [Validators.required]),
     numberofdepart: new FormControl(null, [Validators.required]),
+    RouteCategory: new FormControl(null, [Validators.required]),
 
     title: new FormControl(null, [Validators.required]),
   });
