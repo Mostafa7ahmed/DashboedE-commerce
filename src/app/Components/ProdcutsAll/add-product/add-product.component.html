@@ -85,6 +85,16 @@
                         </div>
                     </div>
 
+                    <div class="form-group col-md-6">
+                        <label for="RouteCategory">اضافه مسار المنتج</label>
+                        <input type="text" class="form-control mt-3 inputProduct" formControlName="RouteCategory" id="RouteCategory"
+                            placeholder="ادخل مسار  المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('RouteCategory')?.invalid && addProduct.get('RouteCategory')?.touched}">
+                        <div *ngIf="addProduct.get('RouteCategory')?.invalid && addProduct.get('RouteCategory')?.touched" class="invalid-feedback">
+                            عدد مسار مطلوب.
+                        </div>
+                    </div>
+
                     <div class="mb-3 col-md-12">
                         <label for="Title" class="form-label">الوصف الطويل</label>
                         <textarea class="form-control inputtitle" id="Title" formControlName="Title" rows="3"
