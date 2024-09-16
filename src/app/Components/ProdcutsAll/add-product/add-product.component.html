@@ -90,7 +90,7 @@
                             placeholder="ادخل تقيم المنتج"
                             [ngClass]="{'is-invalid': addProduct.get('Rating')?.invalid && addProduct.get('trans')?.touched}" min="1" max="5">
                         <div *ngIf="addProduct.get('Rating')?.invalid && addProduct.get('Rating')?.touched" class="invalid-feedback">
-                             تقيم  المنتج مطلوبة.
+                             تقيم المنتج مطلوبة.
                         </div>
                     </div>
 
