@@ -40,6 +40,8 @@ export class AddProductComponent {
     Title: new FormControl(null, [Validators.required]),
     depart: new FormControl(null, [Validators.required]),
     trans: new FormControl(null, [Validators.required]),
+    Rating : new FormControl(null, [Validators.required]),
+
     RouteCategory: new FormControl(null, [Validators.required]),
 
   });

@@ -84,6 +84,15 @@
                             مصاريف الشحن مطلوبة.
                         </div>
                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="Rating">ادخل تقيم المنتج </label>
+                        <input type="number" class="form-control mt-3 inputProduct" formControlName="Rating" id="Rating"
+                            placeholder="ادخل تقيم المنتج"
+                            [ngClass]="{'is-invalid': addProduct.get('Rating')?.invalid && addProduct.get('trans')?.touched}" min="1" max="5">
+                        <div *ngIf="addProduct.get('Rating')?.invalid && addProduct.get('Rating')?.touched" class="invalid-feedback">
+                             تقيم  المنتج مطلوبة.
+                        </div>
+                    </div>
 
                     <div class="form-group col-md-6">
                         <label for="RouteCategory">اضافه مسار المنتج</label>
