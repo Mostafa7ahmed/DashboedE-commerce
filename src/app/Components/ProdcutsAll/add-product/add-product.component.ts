@@ -35,7 +35,7 @@ export class AddProductComponent {
     Image: new FormControl(null, [Validators.required]),
     price: new FormControl(null, [Validators.required]),
     Qty: new FormControl(null, [Validators.required]),
-    dec: new FormControl(null, [Validators.required]),
+    dec: new FormControl(null),
     subTitle: new FormControl(null, [Validators.required]),
     Title: new FormControl(null, [Validators.required]),
     depart: new FormControl(null, [Validators.required]),

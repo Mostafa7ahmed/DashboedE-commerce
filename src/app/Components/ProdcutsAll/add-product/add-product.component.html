@@ -49,10 +49,8 @@
                         <label for="dec">الخصم</label>
                         <input type="number" class="form-control mt-3 inputProduct" formControlName="dec" id="dec"
                             placeholder="ادخل الخصم المنتج"
-                            [ngClass]="{'is-invalid': addProduct.get('dec')?.invalid && addProduct.get('dec')?.touched}">
-                        <div *ngIf="addProduct.get('dec')?.invalid && addProduct.get('dec')?.touched" class="invalid-feedback">
-                            الخصم مطلوب.
-                        </div>
+                >
+                      
                     </div>
 
                     <div class="form-group col-md-6">
