@@ -9,7 +9,7 @@
         <form (ngSubmit)="Sigin(siginForm)" [formGroup]="siginForm">
             <div class="form-group mt-3">
                 <label for="email" class="mb-3"> البريد الالكتروني</label>
-                <input type="email" class="form-control inps " id="email" formControlName="email"
+                <input type="email" class="form-control inps " value="mostafaAdmin300@gmail.com" id="email" formControlName="email"
                     placeholder=" ادخل البريد الالكتروني ">
                 <div *ngIf="siginForm.get('email')?.errors && siginForm.get('email')?.touched" class="text-danger mt-1">
                     <span *ngIf="siginForm.get('email')?.errors?.['required']" class="m-0">الايميل مطلوب</span>
@@ -22,7 +22,7 @@
                 <label for="password" class="mb-3"> كلمة المرور </label>
                 <div class="position-relative">
                     <input [type]="passwordFieldType ? 'password' : 'text'" class="form-control inps "
-                        formControlName="password" id="password" placeholder=" ادخل كلمة المرور">
+                        formControlName="password" value="Mostafa@300" id="password" placeholder=" ادخل كلمة المرور">
 
 
                     <i (click)="togglePasswordVisibility()" role="button" class="bi position-absolute top-4 passicon"
